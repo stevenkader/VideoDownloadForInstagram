@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VideoDownloadForInstagram.iml" filepath="$PROJECT_DIR$/.idea/modules/VideoDownloadForInstagram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nativetemplates/VideoDownloadForInstagram.nativetemplates.iml" filepath="$PROJECT_DIR$/.idea/modules/nativetemplates/VideoDownloadForInstagram.nativetemplates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/VideoDownloadForInstagram.utils.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/VideoDownloadForInstagram.utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/regrann/VideoDownloadForInstagram.videodownload.iml" filepath="$PROJECT_DIR$/.idea/modules/regrann/VideoDownloadForInstagram.videodownload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.main.iml" filepath="$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/videodownload/VideoDownloadForInstagram.videodownload.unitTest.iml" />
+    </modules>
+  </component>
+</project>
