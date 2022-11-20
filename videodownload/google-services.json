@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "276450039701",
+    "project_id": "videodownloader-2adf2",
+    "storage_bucket": "videodownloader-2adf2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276450039701:android:8ed6a4d2dff210f764489c",
+        "android_client_info": {
+          "package_name": "com.video.downloader.ig.reels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276450039701-5rio1kc2c5l0d7q69bd4hvsuhjun88jh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlP-A9BAKsT0xWXFhdaRQ9DNt0dr8No1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276450039701-5rio1kc2c5l0d7q69bd4hvsuhjun88jh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
