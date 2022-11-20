@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search, should appear as action button -->
+
+    <item
+        android:id="@+id/action_removeads"
+        android:orderInCategory="100"
+        android:title="Try PRO"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_emailsupport"
+        android:orderInCategory="100"
+        android:title="Email Support"
+
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_settings2"
+        android:orderInCategory="200"
+        android:title="@string/action_settings"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_action_help1"
+        android:orderInCategory="300"
+        android:title="Help"
+        android:visible="false"
+        app:showAsAction="always" />
+
+
+</menu>

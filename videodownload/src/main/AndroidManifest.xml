@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:installLocation="internalOnly">
+
+    <uses-sdk tools:overrideLibrary="com.facebook, android.support.customtabs" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.persistent" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        tools:node="remove" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:remove="android:maxSdkVersion" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+
+    <application
+        android:name="com.video.downloader.ig.reels.activity.VideoDownloaderApp"
+        android:hardwareAccelerated="true"
+        android:allowBackup="true"
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="VideoDownloader"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:hasFragileUserData="true"
+        tools:replace="android:name">
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.video.downloader.ig.reels.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.AppMainActivity"
+            android:exported="true"
+            android:label="VideoDownload">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.NewShareText"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.video.downloader.ig.reels.activity.FetchDownloadUrlService"
+            android:exported="true" />
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.ShareActivity"
+
+            android:label="VideoDownloaderIG"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Transparent.Fullscreen" />
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.OnBoardingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.UpgradeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.CheckPermissions"
+            android:label="VideoDownloaderIG - Permissions"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.LoginRequestActivity"
+            android:label="VideoDownloaderIG - Connect to Instagram"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.InstagramLogin"
+            android:label="VideoDownloaderIG - Login to Instagram"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.SettingsActivity2"
+            android:label="VideoDownloaderIG Settings"
+            android:theme="@style/Pref" />
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.ModeSettingsActivity"
+            android:label="Mode Settings" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.QuickSaveActivity"
+            android:label="Quick Save"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.PostFromKeptActivity"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <receiver
+            android:name="com.video.downloader.ig.reels.receiver.ServiceStarter"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.video.downloader.ig.reels.activity.NoCropActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <!--
+        <service
+            android:name=".service.ClipboardListenerService"
+            android:exported="true"
+            android:label="VideoDownloaderIG Service">
+            <intent-filter>
+                <action
+                    android:name="com.video.downloader.ig.reels.service.ClipboardListenerService"
+                    android:process=":remote" />
+            </intent-filter>
+        </service>
+        -->
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8534786486141147~4402306255" />
+
+    </application>
+
+</manifest>
