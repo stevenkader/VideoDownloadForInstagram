@@ -101,10 +101,7 @@
         <activity
             android:name="com.video.downloader.ig.reels.activity.UpgradeActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.video.downloader.ig.reels.activity.CheckPermissions"
-            android:label="VideoDownloaderIG - Permissions"
-            android:screenOrientation="portrait" />
+
 
         <activity
             android:name="com.video.downloader.ig.reels.activity.LoginRequestActivity"

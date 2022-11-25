@@ -2,7 +2,6 @@ package com.video.downloader.ig.reels.activity;
 
 import static com.video.downloader.ig.reels.util.Util.getUserCountry;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.ClipData;
@@ -15,7 +14,6 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
@@ -35,7 +33,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.video.downloader.ig.reels.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AppMainActivity extends AppCompatActivity {
@@ -332,48 +329,11 @@ editor.commit();
         return true;
     }
 
-    private void checkPermissions() {
-        List<String> permissionsNeeded = new ArrayList<String>();
-
-        final List<String> permissionsList = new ArrayList<String>();
-        if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
-            permissionsNeeded.add("Read SMS");
-
-
-        if (permissionsNeeded.size() > 0) {
-
-
-            Intent i;
-
-            i = new Intent(this, CheckPermissions.class);
-
-
-            startActivity(i);
-
-
-        } else
-            checkForInstagramURLinClipboard();
-
-    }
-
-
     @Override
     protected void onResume() {
         super.onResume();
 
-
-        if (Build.VERSION.SDK_INT >= 23) {
-
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //Do something after 100ms
-                    checkPermissions();
-                }
-            }, 1000);
-        }
-
+        checkForInstagramURLinClipboard();
 
         invalidateOptionsMenu();
 
