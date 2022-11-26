@@ -15,8 +15,8 @@ android {
         applicationId "com.video.downloader.ig.reels"
         minSdkVersion 24
         targetSdkVersion 31
-        versionCode 3
-        versionName "1.14"
+        versionCode 4
+        versionName "1.16"
 
         multiDexEnabled true
 
